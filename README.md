@@ -23,6 +23,8 @@ from snowglobe.client import CompletionRequest, CompletionFunctionOutputs
 from openai import OpenAI
 import os
 
+os.env["OTEL_PYTHON_TRACER_PROVIDER"] = "sdk_tracer_provider"
+
 ### Add these two lines to your agent file and watch context rich traces come in!
 from snowglobe.telemetry.openinference import OpenInferenceInstrumentor
 OpenInferenceInstrumentor().instrument()
