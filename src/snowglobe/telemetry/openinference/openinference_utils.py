@@ -1,5 +1,6 @@
 """
-Borrowed heavily from openinference-instrumentation-guardrails
+Borrowed heavily from openinference-instrumentation-guardrails.
+Source: https://github.com/Arize-ai/openinference/blob/main/python/instrumentation/openinference-instrumentation-guardrails/src/openinference/instrumentation/guardrails/_wrap_guard_call.py#L29-L45
 """
 from enum import Enum
 from typing import Any, Iterator, List, Mapping, Optional, Tuple
