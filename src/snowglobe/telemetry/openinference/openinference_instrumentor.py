@@ -57,7 +57,9 @@ class OpenInferenceInstrumentor(BaseInstrumentor):
                 Callable[[CompletionRequest], Awaitable[CompletionFunctionOutputs]],
             ],
             CompletionRequest,
+            str,
             CompletionFnTelemetryContext,
+            bool,
         ],
         Awaitable[CompletionFunctionOutputs],
     ]
@@ -127,7 +129,9 @@ class OpenInferenceInstrumentor(BaseInstrumentor):
                     Callable[[CompletionRequest], Awaitable[CompletionFunctionOutputs]],
                 ],
                 CompletionRequest,
+                str,
                 CompletionFnTelemetryContext,
+                bool,
             ],
             Awaitable[CompletionFunctionOutputs],
         ] = runner.run_completion_fn
@@ -177,7 +181,9 @@ class OpenInferenceInstrumentor(BaseInstrumentor):
                     Callable[[CompletionRequest], Awaitable[CompletionFunctionOutputs]],
                 ],
                 CompletionRequest,
+                str,
                 CompletionFnTelemetryContext,
+                bool,
             ],
             Awaitable[CompletionFunctionOutputs],
         ],
@@ -189,7 +195,9 @@ class OpenInferenceInstrumentor(BaseInstrumentor):
                 Callable[[CompletionRequest], Awaitable[CompletionFunctionOutputs]],
             ],
             completion_request: CompletionRequest,
+            _app_id: str,  # noqa
             telemetry_context: CompletionFnTelemetryContext,
+            _enable_tool_mocking: bool,  # noqa
         ) -> CompletionFunctionOutputs:
             session_id = telemetry_context["session_id"]
             conversation_id = telemetry_context["conversation_id"]
