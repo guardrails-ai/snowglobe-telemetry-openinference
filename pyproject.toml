@@ -1,6 +1,6 @@
 [project]
 name = "snowglobe-telemetry-openinference"
-version = "0.0.3"
+version = "1.0.0"
 authors = [
     {name = "Guardrails AI", email = "contact@guardrailsai.com"}
 ]
