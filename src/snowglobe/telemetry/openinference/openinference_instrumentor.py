@@ -96,7 +96,8 @@ class OpenInferenceInstrumentor(BaseInstrumentor):
         if not config:
             config = TraceConfig()
         else:
-            assert isinstance(config, TraceConfig)
+            if not isinstance(config, TraceConfig):
+                raise AssertionError()
         self._tracer = OITracer(
             trace_api.get_tracer(__name__, self._snowglobe_version, tracer_provider),
             config=config,
